@@ -39,7 +39,7 @@ class Cron(Request):
             "row_number": row_number
         })
 
-    def change_hidden_state(self, row_number: int, is_hidden: int) -> Answer:
+    def change_hidden_state(self, row_number: int, is_hidden: bool) -> Answer:
         return self._do_request(self._rest["change_hidden_state"], {
             "row_number": row_number,
             "is_hidden": is_hidden

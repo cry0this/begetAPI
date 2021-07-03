@@ -12,8 +12,8 @@ class User(Request):
     def get_account_info(self) -> Answer:
         return self._do_request(self._rest["get_account_info"])
 
-    def toggle_ssh(self, status: int, ftplogin: str=None) -> Answer:
+    def toggle_ssh(self, status: bool, ftp_login: str=None) -> Answer:
         return self._do_request(self._rest["toggle_ssh"], {
             "status": status,
-            "ftplogin": ftplogin
+            "ftplogin": ftp_login
         })

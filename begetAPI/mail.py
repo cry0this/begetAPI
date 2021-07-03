@@ -28,13 +28,13 @@ class Mail(Request):
         })
 
     def drop_mailbox(self, domain: str, mailbox: str) -> Answer:
-        return self._do_request(self._rest["create_mailbox"], {
+        return self._do_request(self._rest["drop_mailbox"], {
             "domain": domain,
             "mailbox": mailbox
         })
 
-    def change_mailbox_settings(self, domain: str, mailbox: str, spam_filter_status: str, 
-                                spam_filter: str, forward_mail_status: str) -> Answer:
+    def change_mailbox_settings(self, domain: str, mailbox: str, spam_filter_status: bool, 
+                                spam_filter: int, forward_mail_status: str) -> Answer:
         return self._do_request(self._rest["change_mailbox_settings"], {
             "domain": domain,
             "mailbox": mailbox,
