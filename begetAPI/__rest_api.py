@@ -1,4 +1,4 @@
-REST = {
+REST_API = {
     "backup": {
         "download_file": "https://api.beget.com/api/backup/downloadFile",
         "download_mysql": "https://api.beget.com/api/backup/downloadMysql",
