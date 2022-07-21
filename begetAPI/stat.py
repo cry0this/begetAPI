@@ -9,18 +9,18 @@ class Stat(Request):
         super().__init__(login, password)
         self._rest = REST_API["stat"]
 
-    def get_site_list_load(self) -> Answer:
-        return self._do_request(self._rest["get_site_list_load"])
+    async def get_site_list_load(self) -> Answer:
+        return await self._do_request(self._rest["get_site_list_load"])
 
-    def get_db_list_load(self) -> Answer:
-        return self._do_request(self._rest["get_db_list_load"])
+    async def get_db_list_load(self) -> Answer:
+        return await self._do_request(self._rest["get_db_list_load"])
 
-    def get_site_load(self, site_id: int) -> Answer:
-        return self._do_request(self._rest["get_site_load"], {
+    async def get_site_load(self, site_id: int) -> Answer:
+        return await self._do_request(self._rest["get_site_load"], {
             "site_id": site_id
         })
 
-    def get_db_load(self, db_name: str) -> Answer:
-        return self._do_request(self._rest["get_db_load"], {
+    async def get_db_load(self, db_name: str) -> Answer:
+        return await self._do_request(self._rest["get_db_load"], {
             "db_name": db_name
         })

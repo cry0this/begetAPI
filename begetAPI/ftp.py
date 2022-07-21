@@ -8,23 +8,23 @@ class Ftp(Request):
         super().__init__(login, password)
         self._rest = REST_API["ftp"]
 
-    def get_list(self) -> Answer:
-        return self._do_request(self._rest["get_list"])
+    async def get_list(self) -> Answer:
+        return await self._do_request(self._rest["get_list"])
 
-    def add(self, suffix: str, homedir: str, password: str) -> Answer:
-        return self._do_request(self._rest["add"], {
+    async def add(self, suffix: str, homedir: str, password: str) -> Answer:
+        return await self._do_request(self._rest["add"], {
             "suffix": suffix,
             "homedir": homedir,
             "password": password
         })
 
-    def change_password(self, suffix: str, password: str) -> Answer:
-        return self._do_request(self._rest["change_password"], {
+    async def change_password(self, suffix: str, password: str) -> Answer:
+        return await self._do_request(self._rest["change_password"], {
             "suffix": suffix,
             "password": password
         })
 
-    def delete(self, suffix: str) -> Answer:
-        return self._do_request(self._rest["delete"], {
+    async def delete(self, suffix: str) -> Answer:
+        return await self._do_request(self._rest["delete"], {
             "suffix": suffix
         })

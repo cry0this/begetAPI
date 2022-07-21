@@ -9,11 +9,11 @@ class User(Request):
         super().__init__(login, password)
         self._rest = REST_API["user"]
 
-    def get_account_info(self) -> Answer:
-        return self._do_request(self._rest["get_account_info"])
+    async def get_account_info(self) -> Answer:
+        return await self._do_request(self._rest["get_account_info"])
 
-    def toggle_ssh(self, status: bool, ftp_login: str=None) -> Answer:
-        return self._do_request(self._rest["toggle_ssh"], {
+    async def toggle_ssh(self, status: bool, ftp_login: str=None) -> Answer:
+        return await self._do_request(self._rest["toggle_ssh"], {
             "status": status,
             "ftplogin": ftp_login
         })
