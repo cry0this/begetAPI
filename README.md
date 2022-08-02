@@ -1,6 +1,5 @@
 # begetAPI
 
----
 
 Unofficial wrapper for [Beget.API](https://beget.com/ru/kb/api/beget-api)
 Requires python >= 3.6
