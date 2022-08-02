@@ -11,17 +11,17 @@ from .user import User
 
 
 class Beget:
-    def __init__(self, login: str, password: str) -> None:
-        self._backup = Backup(login, password)
-        self._cron = Cron(login, password)
-        self._dns = Dns(login, password)
-        self._domain = Domain(login, password)
-        self._ftp = Ftp(login, password)
-        self._mail = Mail(login, password)
-        self._mysql = Mysql(login, password)
-        self._site = Site(login, password)
-        self._stat = Stat(login, password)
-        self._user = User(login, password)
+    def __init__(self, *args, **kwargs) -> None:
+        self._backup = Backup(*args, **kwargs)
+        self._cron = Cron(*args, **kwargs)
+        self._dns = Dns(*args, **kwargs)
+        self._domain = Domain(*args, **kwargs)
+        self._ftp = Ftp(*args, **kwargs)
+        self._mail = Mail(*args, **kwargs)
+        self._mysql = Mysql(*args, **kwargs)
+        self._site = Site(*args, **kwargs)
+        self._stat = Stat(*args, **kwargs)
+        self._user = User(*args, **kwargs)
 
     @property
     def backup(self):

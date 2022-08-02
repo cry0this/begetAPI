@@ -2,7 +2,7 @@
 
 ---
 
-Unofficial wrapper for [Beget.API](https://beget.com/ru/kb/api/beget-api)  
+Unofficial wrapper for [Beget.API](https://beget.com/ru/kb/api/beget-api)
 Requires python >= 3.6
 
 ## Installation
@@ -27,16 +27,21 @@ from begetAPI import User
 user = User("login", "password")
 answer = user.get_account_info()
 ```
-  
+
 See [Beget.API](https://beget.com/ru/kb/api/beget-api) documentation to get list of methods.
 
-## Answer class  
-All methods returns Answer() class with properties:  
-- **raw**(str): contains raw response string  
-- **is_parsed**(bool): `False` if failed to parse json from raw string  
-- **is_success**(bool): `True` if `status` field equals "success"  
-- **error_text**(str): contains `error_text` field  
-- **error_code**(str): contains `error_code` field  
+For asynchronous calls you can add `asynchronous` param (False by default):
+```
+beget = Beget("login", "password", asynchronous=True)
+```
+
+## Answer class
+All methods returns Answer() class with properties:
+- **raw**(str): contains raw response string
+- **is_parsed**(bool): `False` if failed to parse json from raw string
+- **is_success**(bool): `True` if `status` field equals "success"
+- **error_text**(str): contains `error_text` field
+- **error_code**(str): contains `error_code` field
 - **json**(dict): contains parsed data from `answer` field
 
 For example:

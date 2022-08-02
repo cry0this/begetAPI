@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'begetAPI',
   packages = ['begetAPI'],
-  version = '0.0.1',
+  version = '0.0.2',
   license='GNU General Public License v3.0',
   description = 'Wrapper for Beget API',
   long_description = """
@@ -11,10 +11,11 @@ setup(
   author = 'Alex Kiselev',
   author_email = 'cry0this@gmail.com',
   url = 'https://github.com/cry0this/begetAPI',
-  download_url = 'https://github.com/cry0this/begetAPI/archive/refs/tags/v0.0.1.tar.gz',
+  download_url = 'https://github.com/cry0this/begetAPI/archive/refs/tags/v0.0.2.tar.gz',
   keywords = ['api', 'beget'],
   install_requires=[
-    'requests'
+    'requests',
+    'aiohttp'
   ],
   classifiers=[
     'Development Status :: 4 - Beta',
